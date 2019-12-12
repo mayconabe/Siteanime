@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Anime Online - Animes</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/animes.css"> 
+</head>
+
+<body>
+    <header>
+      <h2 class="logo"><a href="{% url 'index' %}" style="color: white; text-decoration: none;">YourAnimesOnline</a></h2>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
+        <ul>
+            <li><a href="{% url 'animes' %}" style="text-decoration: none;">Animes</a></li>
+            <li><a href="{% url 'recentadd' %}" style="text-decoration: none;">Adicionados recentemente</a></li>
+            <li><a href="{% url 'minhalista' %}" style="text-decoration: none;">Minha Lista</a></li>
+            <li><a href="#" style="text-decoration: none;">Sobre</a></li>
+            <li><img src="/static/login.png/" alt="logo" width="32px" height="32" style="margin-top: -20%;"></li>
+          </ul>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+  </header>
+
+  <div class="content">
+    {% for a in animes %}
+      <div class="animes">
+          <a href="#"><img src="{{ a.capa }}"></a>
+          <div>
+              <a href="#" style="font-size: 18px; text-decoration: none;">{{ a.nome }}</a>
+          </div>
+      </div>
+
+    {% endfor %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>YourAnimesOnline - Entrar</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+<body>
+    <div class="loginbox">
+        <h2>Entrar</h2>
+        <br>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <p>Nome:</p>
+            <input type="text" name="username" placeholder="Nome de usuario">
+            <p>Senha:</p>
+            <input type="password" name="password" placeholder="Senha">
+            <div>
+                <input type="submit" class="button" name="submit" value="Entrar">
+            </div>
+
+        </form>
+        <div style="float: left;">
+            <a href="#">Esqueceu sua senha?</a>
+        </div>
+        <div style="float: right;">
+            <a href="#">Criar conta!</a>
+        </div>
+    </div>
+
+</body>
+</head>
+</html>

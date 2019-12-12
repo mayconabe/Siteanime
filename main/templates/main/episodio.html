@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+      <title>Your Animes Online - {{ episodio.titulo }}</title>
+        <script src="https://cdn.plyr.io/2.0.15/plyr.js"></script>
+        <link rel="stylesheet" href="https://cdn.plyr.io/2.0.15/plyr.css">
+    </head>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        video{
+            height: 100vh !important;
+        }
+    </style>
+    
+    <body>
+
+        <!-- Video Youtube -->
+        <!--
+        <div id='plyr-mediaplayer' data-type="youtube" data-video-id="H1Dvg2MxQn8"></div>
+        -->
+
+        <!-- Video local-->
+        <!--
+        <video id="plyr-mediaplayer" poster="PosterPlayer.jpg" controls>
+           <source src="meuVideo.mp4" type="video/mp4">
+        </video>
+        -->
+
+        <!-- Video link -->
+        <video id="plyr-mediaplayer" poster="PosterPlayer.jpg" controls>
+            <source src="meuVideo.mp4" type="video/mp4">
+            <source src="http://cdn02.fluehost.com/a/boku-no-hero-academia-4/hd/01-hd.mp4" type="video/mp4">
+        </video>
+       
+        <script>
+            plyr.setup("#plyr-mediaplayer");
+        </script>
+
+    </body>
