@@ -23,6 +23,7 @@ from main.views import LogoutView
 from main.views import MinhaListaView
 from main.views import AnimesView
 from main.views import RecentAddView
+from main.views import CadastroView
 
 urlpatterns = [
 	#path('novo/', CadastroView.as_view(), name='cadastros'),
@@ -34,8 +35,5 @@ urlpatterns = [
     path('minhalista/', MinhaListaView.as_view(), name='minhalista'),
     path('animes/', AnimesView.as_view(), name='animes'),
     path('recentadd/', RecentAddView.as_view(), name='recentadd'),
-	#path('detalhes/<int:contato_id>', DetalhesView.as_view(), name='detalhes'),
-    #path('editar/<int:contato_id>', CadastroView.as_view(), name='editar'),
-    #path('delete/<int:contato_id>', DeleteView.as_view(), name='delete')
-
+    path('signin/', CadastroView.as_view(), name='signin'),
 ]

@@ -1,0 +1,25 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/static/css/signin.css">
+</head>
+  <body>
+      <div class="loginbox">
+          <h2>Criar Conta:</h2>
+          <br>
+          <form action="{% url 'signin' %}" method="POST">
+              {% csrf_token %}
+              <p>Nome:</p>
+              {{ form.username }}
+              {{ form.username.errors }}
+              <p>Senha:</p>
+              {{ form.password }}
+              {{ form.password.errors }}
+              <p>Email:</p>
+              {{ form.email }}
+              {{ form.email.errors }}
+              <input type="submit" class="button" value="Criar">
+          </form>
+      </div>
+  
+  </body>

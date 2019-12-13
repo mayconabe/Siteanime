@@ -7,13 +7,15 @@ from django.core.files.storage import FileSystemStorage
 from main.models import Anime, Episodio, Temporada
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from main.forms import UserModelForm
 
 # Create your views here.
 
 ERROS = {
-	403: 'Você nao tem permissão para entrar',
-	404: 'Pagina não encontrada',
-	500: 'Erro interno'
+	403: 'Você não tem permissão para entrar.',
+	404: 'Pagina não encontrada.',
+	500: 'Erro interno.'
 }
 
 class LoggedView(View):
@@ -94,5 +96,21 @@ class RecentAddView(View):
 
 	def get(self, request):
 		return render(request, 'main/adicionadosrecentemente.html', None)
+
+class CadastroView(View):
+	def get(self, request):
+		form = UserModelForm()
+		return render(request, 'main/signin.html', {'form': form})
+	
+	def post(self, request):
+		form = UserModelForm(request.POST or None)
+		context = {'form': form}
+		if request.method == 'POST':
+			if form.is_valid():
+				form.save()
+		return render(request, 'main/signin.html', context)
+
+
+
 
 		
