@@ -8,7 +8,7 @@ from main.models import Anime, Episodio, Temporada
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from main.forms import UserModelForm
+from main.forms import UserModelForm, LoginForm
 
 # Create your views here.
 
@@ -54,17 +54,16 @@ class EpisodioView(LoggedView):
 class LoginView(View):
 
 	def get(self, request):
-		return render(request, 'main/login.html', None)
+		form = LoginForm()
+		return render(request, 'main/login.html', {'form': form})
 
 	def post(self, request):
-		username = request.POST['username']
-		password = request.POST['password']
-		user = authenticate(request, username=username, password=password)
-		if user is not None:
-			login(request, user)
-			return HttpResponseRedirect(reverse('index'))
-		else:
-			return HttpResponseRedirect(reverse('error', kwargs={'tipo_erro': 403}))
+		if request.method == 'POST':
+			form = LoginForm(data=request.POST)
+			if form.is_valid():
+				return HttpResponseRedirect(reverse('index'))
+			else:
+				return HttpResponseRedirect(reverse('error', kwargs={'tipo_erro': 403}))
 
 class ErrorView(View):
 

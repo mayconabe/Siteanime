@@ -9,9 +9,9 @@
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
             <p>Nome:</p>
-            <input type="text" name="username" placeholder="Nome de usuario">
+            {{ form.username }}
             <p>Senha:</p>
-            <input type="password" name="password" placeholder="Senha">
+            {{ form.password }}
             <div>
                 <input type="submit" class="button" name="submit" value="Entrar">
             </div>

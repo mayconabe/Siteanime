@@ -18,7 +18,11 @@
               <p>Email:</p>
               {{ form.email }}
               {{ form.email.errors }}
-              <input type="submit" class="button" value="Criar">
+              <div>
+                <input type="submit" class="button" value="Criar">
+              </div>
+              <br>
+              <a href="{% url 'login' %}">Já tem uma conta?</a>
           </form>
       </div>
   

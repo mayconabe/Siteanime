@@ -25,3 +25,21 @@ class UserModelForm(ModelForm):
 				'required': 'Escreva um email válido.'
 			}
 		}
+
+class LoginForm(ModelForm):
+	class Meta:
+		model = User
+		fields = ['username', 'password']
+		widgets = {
+			'username': forms.TextInput(attrs={'class': 'form-control', 'max-length':18}),
+			'password': forms.PasswordInput(attrs={'class': 'form-control', 'max-length':100}),
+		}
+
+		error_messages = {
+			'username': {
+				'required': 'Este campo é obrigatório.'
+			},
+			'password': {
+				'required': 'Este campo é obrigatório.'
+			},
+		}
