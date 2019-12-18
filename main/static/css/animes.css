@@ -206,7 +206,7 @@ nav a:hover {
    transition: none;
    transform: scale(1,1);
    background: none;
-   top: initial;
+   top: -4px;
    left: initial;
    /* end Edge support stuff */
    
@@ -441,6 +441,36 @@ a:hover {
 .gui-card:hover ~ .gui-card {
   -webkit-transform: translate3d(125px, 0, 0);
           transform: translate3d(125px, 0, 0);
+}
+
+.dropbtn {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.85);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  opacity: 90%;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(223, 217, 217);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #a11818}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 

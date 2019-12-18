@@ -8,20 +8,29 @@
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"> 
 </head>
 <body>
-    <header>
-      <h2 class="logo"><a href="{% url 'index' %}" style="color: white; text-decoration: none;">YourAnimesOnline</a></h2>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <nav>
-        <ul>
-            <li><a href="{% url 'animes' %}" style="text-decoration: none;">Animes</a></li>
-            <li><a href="{% url 'recentadd' %}" style="text-decoration: none;">Adicionados recentemente</a></li>
-            <li><a href="{% url 'minhalista' %}" style="text-decoration: none;">Minha Lista</a></li>
-            <li><a href="#" style="text-decoration: none;">Sobre</a></li>
-        </ul>
-      </nav>
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-      </label>
-  </header>
+  <header>
+    <h2 class="logo"><a href="{% url 'index' %}" style="color: white; text-decoration: none;">YourAnimesOnline</a></h2>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <nav>
+      <ul>
+        <li><a href="{% url 'animes' %}" style="text-decoration: none;">Animes</a></li>
+        <li><a href="{% url 'recentadd' %}" style="text-decoration: none;">Adicionados recentemente</a></li>
+        <li><a href="{% url 'minhalista' %}" style="text-decoration: none;">Minha Lista</a></li>
+        <li><a href="#" style="text-decoration: none;">Sobre</a></li>
+        <li>
+          <div class="dropdown">
+            <a class="dropbtn" style="color: #95a5a6; text-decoration: none;">Olá, {{ nome }}</a>
+            <div class="dropdown-content">
+              <a href="#">Perfil</a>
+              <a href="{% url 'logout' %}">Sair</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+    </label>
+</header>
 </body>
 </html>
