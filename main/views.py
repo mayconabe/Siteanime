@@ -5,10 +5,16 @@ from django.http import Http404
 import csv
 from django.core.files.storage import FileSystemStorage
 from main.models import Anime, Episodio, Temporada
-from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from main.forms import UserModelForm, LoginForm
+from django.shortcuts import redirect
+
+from django.contrib.auth import (
+	authenticate,
+	get_user_model,
+	login,
+	logout
+)
 
 # Create your views here.
 
@@ -51,19 +57,6 @@ class EpisodioView(LoggedView):
 		}
 		return render(request, 'main/episodio.html', data)
 
-class LoginView(View):
-
-	def get(self, request):
-		form = LoginForm()
-		return render(request, 'main/login.html', {'form': form})
-
-	def post(self, request):
-		if request.method == 'POST':
-			form = LoginForm(data=request.POST)
-			if form.is_valid():
-				return HttpResponseRedirect(reverse('index'))
-			else:
-				return HttpResponseRedirect(reverse('error', kwargs={'tipo_erro': 403}))
 
 class ErrorView(View):
 

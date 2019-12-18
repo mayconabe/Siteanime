@@ -9,15 +9,15 @@
           <br>
           <form action="{% url 'signin' %}" method="POST">
               {% csrf_token %}
+              {% if form.errors %}
+              <p>Voce está digitando algo errado!  </p>
+              {% endif %}
               <p>Nome:</p>
               {{ form.username }}
-              {{ form.username.errors }}
               <p>Senha:</p>
-              {{ form.password }}
-              {{ form.password.errors }}
+              {{ form.password }}  
               <p>Email:</p>
-              {{ form.email }}
-              {{ form.email.errors }}
+              {{ form.email }} 
               <div>
                 <input type="submit" class="button" value="Criar">
               </div>

@@ -17,13 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from main.views import IndexView
 from main.views import EpisodioView
-from main.views import LoginView
 from main.views import ErrorView
 from main.views import LogoutView
 from main.views import MinhaListaView
 from main.views import AnimesView
 from main.views import RecentAddView
 from main.views import CadastroView
+from django.contrib.auth.views import LoginView
 
 urlpatterns = [
 	#path('novo/', CadastroView.as_view(), name='cadastros'),

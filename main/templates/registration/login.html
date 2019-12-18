@@ -8,14 +8,13 @@
         <br>
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
-            <p>Nome:</p>
-            {{ form.username }}
-            <p>Senha:</p>
-            {{ form.password }}
-            <div>
-                <input type="submit" class="button" name="submit" value="Entrar">
-            </div>
 
+            <label>Usuário:</label>
+            {{ form.username }}
+
+            <label>Senha:</label>
+            {{ form.password }}
+            <input type="submit" class="button" value="Entrar">
         </form>
         <div style="float: left;">
             <a href="{% url 'signin' %}">Esqueceu sua senha?</a>
