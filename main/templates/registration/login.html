@@ -14,13 +14,13 @@
 
             <label>Senha:</label>
             {{ form.password }}
-            <input type="submit" class="button" value="Entrar">
+            <input type="submit" class="button" name="submit" value="Entrar">
         </form>
         <div style="float: left;">
-            <a href="{% url 'signin' %}">Esqueceu sua senha?</a>
+            <a href="#">Esqueceu sua senha?</a>
         </div>
         <div style="float: right;">
-            <a href="#">Criar conta!</a>
+            <a href="{% url 'signin' %}">Criar conta!</a>
         </div>
     </div>
 

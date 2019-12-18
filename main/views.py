@@ -8,7 +8,7 @@ from main.models import Anime, Episodio, Temporada
 from django.urls import reverse
 from main.forms import UserModelForm, LoginForm
 from django.shortcuts import redirect
-
+from django.contrib.auth.models import User, auth
 from django.contrib.auth import (
 	authenticate,
 	get_user_model,
@@ -95,12 +95,17 @@ class CadastroView(View):
 		return render(request, 'main/signin.html', {'form': form})
 	
 	def post(self, request):
-		form = UserModelForm(request.POST or None)
-		context = {'form': form}
 		if request.method == 'POST':
-			if form.is_valid():
-				form.save()
-		return render(request, 'main/signin.html', context)
+			username = request.POST['username']
+			password = request.POST['password']
+			email = request.POST['email']
+
+			user = User.objects.create_user(username=username, password=password, email=email)
+			user.save()
+			return redirect('login')
+		else:
+			return render(request, 'main/signin.html')
+
 
 
 
