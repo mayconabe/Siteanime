@@ -56,7 +56,7 @@
                   <div class="gui-card">
                     <div class="gui-card__media">
                       {% if a.ult_episodio.id %}
-                      <img class="gui-card__img" src="{{ a.capa }}" alt="image" />
+                      <a href="{% url 'episodio' a.ult_episodio.id %}"><img class="gui-card__img" src="{{ a.capa }}" alt="image" /></a>
                       {% endif %}
                     </div>
                     {% if a.ult_episodio.id %}

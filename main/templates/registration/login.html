@@ -2,17 +2,21 @@
 <head>
     <title>YourAnimesOnline - Entrar</title>
     <link rel="stylesheet" href="/static/css/login.css">
+</head>
 <body>
     <div class="loginbox">
         <h2>Entrar</h2>
-        <br>
         <form action="{% url 'login' %}" method="POST">
             {% csrf_token %}
-
-            <label>Usuário:</label>
+            {% if form.errors %}
+            <div>
+                <h4 style="margin-button: 4px; color: red; text-align: center;">Senha ou usuário incorretos.</h4>
+            </div>
+            {% endif %}
+            <p>Usuário:</p>
             {{ form.username }}
 
-            <label>Senha:</label>
+            <p>Senha:</p>
             {{ form.password }}
             <input type="submit" class="button" name="submit" value="Entrar">
         </form>
@@ -25,5 +29,4 @@
     </div>
 
 </body>
-</head>
 </html>
