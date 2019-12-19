@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-  <title>Your Animes Online</title>
-
+<html >
 <head>
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script type="text/javascript" src="/static/js/index.js"></script>
-  <link rel="stylesheet" type="text/css" href="/static/css/style.css"> 
+  <meta charset="UTF-8">
+  <title>Your Animes Online - Início</title>
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+      <script src="/static/js/index.js"></script>
 </head>
+
 
 <body>
   <header>
@@ -35,39 +35,98 @@
         <span></span>
       </label>
   </header>
+  <div class="contain">
+    <div class="slider">
 
-
-<div class="contain">
-  <div class="slider">
-      <h3>Ação</h3>
+      <h3>Populares</h3>
       <span id="setaEsquerda" class="handle handlePrev active">
         <i class="fa fa-caret-left" aria-hidden="true"></i>
       </span>
+
       <div id="scroller" class="row">
-                <div class="row__inner">
-                  {% for a in animes %}
-                  <div class="gui-card">
-                    <div class="gui-card__media">
-                      {% if a.ult_episodio.id %}
-                      <img class="gui-card__img" src="{{ a.capa }}" alt="image" />
-                      {% endif %}
-                    </div>
-                    {% if a.ult_episodio.id %}
-                    <div class="gui-card__details">
-                      <div class="gui-card__title">
-                        <a href="{% url 'episodio' a.ult_episodio.id %}" style="text-decoration: none;">{{ a.nome }}</a>
-                      </div>
-                    </div>
-                    {% endif %}
-                  </div>
-                  {% endfor %}
-                </div>
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimi no Na wa
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://dinastiageek.com.br/wp-content/uploads/2019/04/the-promised-neverland-poster-oficial.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yakusoku no Neverland
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://miro.medium.com/max/6000/1*UudNv6NojJQyxfqSwNUwag.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kaguya-sama: Love is War
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://cosmonerd.com.br/wp-content/uploads/2019/08/Kimetsu-no-Yaiba.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimetsu no Yaiba
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://2.bp.blogspot.com/-WiG3G1XHNOo/VCIokELyxBI/AAAAAAAALtE/vsCQEx3QAXA/s1600/57533-haikyuu-haik222yuu.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Haikyuu
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+        <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+        <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <span id="setaDireita" class="handle handleNext active">
         <i class="fa fa-caret-right" aria-hidden="true"></i>
       </span>
-    </div>
 
-</div>
+    </div>
+  </div>
 
 </body>
 </html>
