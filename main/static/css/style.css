@@ -113,7 +113,6 @@ body {
  position: relative;
 }
 
-/* navigation styles start here */
 
 header {
  background: var(--background);
@@ -123,8 +122,6 @@ header {
  width: 100%;
 }
 
-/* changed this from the tutorial video to
-  allow it to gain focus, making it tabbable */
 .nav-toggle {
  position: absolute !important;
  top: -9999px !important;
