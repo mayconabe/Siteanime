@@ -1,297 +1,93 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
-
-
-body,
 html {
-  padding: 0 5px;
-  margin: 0;
-  background: #0e0f11;
-  color: #ecf0f1;
-  font-family: 'Open Sans', sans-serif;
-  min-height: 100vh;
-  display: inline-block !important;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-}
-* {
-  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-h1,
-p {
-  text-align: center;
-}
-p {
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
-}
-a:link,
-a:hover,
-a:active,
-a:visited {
-  -webkit-transition: color 150ms;
-  transition: color 150ms;
-  color: #95a5a6;
-  text-decoration: none;
-}
-a:hover {
-  color: #7f8c8d;
-  text-decoration: underline;
-}
-.contain {
-  width: 100%;
-}
-
-.slider {
-    height: 214px;
-    position: fixed;
-    margin: 0;
-    padding: 0 0%;
-    bottom: 0px;
-    width: 100%;
-    left: 0px;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    
-}
-
-.slider h3{
-  position: absolute;
-  top: 22px;
-  z-index: 30;
-}
-
-.slider .handle.handlePrev {
-    left: 0;
-
-}
-
-.slider .handle.handleNext {
-    right: 0;
-
-}
-
-.slider .handle.active {
-    cursor: pointer;
-}
-
-.slider .handle {
-    background: rgba(20, 20, 20, 0.26);
-    position: absolute;
-    top: 32%;
-    height: 141px;
-    bottom: 0;
-    z-index: 20;
-    width: 4%;
-    text-align: center;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    color: #fff;
-}
-
-.fa{
-  font-size: 46px;
-  margin-top: 70%;
-}
-
-.row {
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
   overflow: hidden;
+  scroll-behavior: smooth;
 }
-.row__inner {
-  -webkit-transition: 450ms -webkit-transform;
-  transition: 450ms -webkit-transform;
-  transition: 450ms transform;
-  transition: 450ms transform, 450ms -webkit-transform;
-  font-size: 0;
-  white-space: nowrap;
-  margin: 70.3125px 0;
-  padding-bottom: 10px;
-}
-
-
-.gui-card {
-  top: 85;
+.wrapper section {
+  width: 100%;
   position: relative;
-  display: inline-block;
-  width: 250px;
-  height: 140.625px;
-  margin-right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  -webkit-transition: 450ms all;
-  transition: 450ms all;
-  -webkit-transform-origin: center left;
-          transform-origin: center left;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  margin: 20px 0;
 }
-.gui-card__img {
-  width: 250px;
-  height: 140.625px;
-  -o-object-fit: cover;
-     object-fit: cover;
+.wrapper section .item {
+  padding: 0 2px;
+  transition: 250ms all;
 }
-.gui-card__details {
+.wrapper section .item:hover {
+  margin: 0 30px;
+  transform: scale(1.2);
+}
+.wrapper section a {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  font-size: 10px;
-  opacity: 0;
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-  -webkit-transition: 450ms opacity;
-  transition: 450ms opacity;
-}
-.gui-card__details:after,
-.gui-card__details:before {
-  content: '';
-  position: absolute;
-  top: 85%%;
-  left: 50%;
-  display: #000;
-}
-.gui-card__details:after {
-  margin-top: -25px;
-  margin-left: -25px;
-  width: 50px;
-  height: 50px;
-  border: 3px solid #ecf0f1;
-  line-height: 50px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 6em;
+  background: black;
+  width: 80px;
+  padding: 20px;
   text-align: center;
-  border-radius: 100%;
-  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
-.gui-card__details:before {
-  content: '▶';
-  left: 0;
-  width: 100%;
-  font-size: 30px;
-  margin-left: 7px;
-  margin-top: -13px;
-  text-align: center;
-  z-index: 2;
-}
-.gui-card:hover .gui-card__details {
-  opacity: 1;
-}
-.gui-card__title {
-  position: absolute;
+.wrapper section a:nth-of-type(1) {
+  top: 0;
   bottom: 0;
-  padding: 3px;
-  text-align: center;
-  width: 100%;
-  color: white;
-  background: #0000009e;
-  font-size: 15px;
+  left: 0;
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 }
-.row__inner:hover {
-  -webkit-transform: translate3d(-62.5px, 0, 0);
-          transform: translate3d(-62.5px, 0, 0);
-}
-.row__inner:hover .gui-card {
-  opacity: 0.3;
-}
-.row__inner:hover .gui-card:hover {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  opacity: 1;
-}
-.gui-card:hover ~ .gui-card {
-  -webkit-transform: translate3d(125px, 0, 0);
-          transform: translate3d(125px, 0, 0);
+.wrapper section a:nth-of-type(2) {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
 }
 
-.text {
-    text-decoration: none;
+@media only screen and (max-width: 600px) {
+  a.arrow__btn {
+    display: none;
   }
+}
 
-  body{
-    margin: 0;
-  }
-  video{
+img {
+    width: 320px;
+    max-height: 150px;
+}
+
+video{
     height: 100vh !important;
-  }
+}
 
-  .videoTrailer{
-      width: 100%;
-      height: 95%;
-      text-align: center;
-      position: fixed;
-  }
+.videoTrailer{
+    width: 100%;
+    height: 98%;
+    text-align: center;
+    position: fixed;
+}
 
-  .scrollbar {
-    display: flex; 
-    overflow-x: scroll;
-    overflow-y: hidden;
- }
-
- .inner {
-     overflow: hidden;
- }
-
- .inner img {
-     transition: all 1.5s ease;
- }
-
- .inner:hover img {
-     transform: scale(1.3);
- }
-
- a:hover {
+a:hover {
    color: rgb(114, 23, 23);
- }
+}
 
-
- .bottom-left {
-   position: absolute;
-   bottom: 8px;
-   left: 16px;
- }
-
- .font-size {
+.font-size {
    font-size: 20px;
- }
+}
 
- .font-color {
+.font-color {
    color: white;
- }
+}
 
-
- .right {
-   float: right;
- }
-
- .capa {
-   margin: 0;
-   padding: 1%;
- }
-
- .animes {
+.animes {
    display: inline-table;
    align-items: center;
-   margin: 1%
-   
- }
+   margin: 1% 
+}
 
- @import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
 
 :root {
  --background: rgba(0, 0, 0, 0.85);
