@@ -1,11 +1,5 @@
-jQuery(document).ready(function($) {
-
-  $("#setaEsquerda").click(function(){
-      $('#scroller').animate( { scrollLeft: '-=1000' }, 500);
+$('.carousel').slick({
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 3
   });
-
-  $("#setaDireita").click(function(){
-      $('#scroller').animate( { scrollLeft: '+=1000' }, 500);
-  });
-
-});
