@@ -10,7 +10,7 @@ body {
 }
 
 .center {
-  max-width: 1480px;
+  max-width: 1780px;
   margin: 0 auto;
   padding: 0 2%;
 }
@@ -32,6 +32,10 @@ header {
   float: left;
 }
 
+.header-left a {
+    vertical-align: 30px;
+}
+
 .menu-header {
   position: relative;
   top: 10px;
@@ -41,13 +45,17 @@ header {
 
 .menu-header li {
   font-size: 14px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: inline-block;
 }
 
-.menu-header a{
+.menu-header a {
   color: white;
   text-decoration: none;
+}
+
+.menu-header a:hover {
+    color: #dad5d5;
 }
 
 /* header right */
@@ -71,11 +79,7 @@ header {
 
 /* Trailer ou video em destaque */
 
-iframe {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
+
 
 section.destaque {
   width: 100%;
@@ -84,13 +88,22 @@ section.destaque {
   z-index: 1;
 }
 
-.info {
+.trailer {
   position: absolute;
-  left: 0;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  width: 100%; 
+  margin: 0 auto;
+
+}
+
+.trailer iframe {
+  z-index: 2;
+  position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  height: 95%;
 }
 
 .overlay {
@@ -118,7 +131,7 @@ section.destaque {
 
 .texto-destaque {
   color: white;
-  z-index: 3;
+  z-index: 4;
   position: relative;
   margin-top: 120px;
   margin-left: 3%;
@@ -162,7 +175,9 @@ section.destaque {
 /* Carousel */
 
 section.animeCarousel {
-  padding-top: 44%;
+  padding-top: 75vh;
+  z-index: 2000;
+  position: relative;
 }
 
 .carousel {
@@ -175,4 +190,241 @@ section.animeCarousel {
 .carousel img {
   width: 350px;
   height: 170px;
+}
+
+
+/* Carousel */
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
+
+contain h1,
+contain p {
+  text-align: center;
+}
+contain p {
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+contain a:link,
+contain a:hover,
+contain a:active,
+contain a:visited {
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  color: #95a5a6;
+  text-decoration: none;
+}
+contain a:hover {
+  color: #7f8c8d;
+  text-decoration: underline;
+}
+.contain {
+  width: 100%;
+  
+  z-index: 1000;
+}
+
+.slider {
+    height: 214px;
+    position: relative;
+    margin: 0;
+    padding: 0 4%;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+}
+
+.slider h3{
+  position: absolute;
+  top: 22px;
+  z-index: 30;
+  color: white;
+}
+
+.slider .handle.handlePrev {
+    left: 11px;
+
+}
+
+.slider .handle.handleNext {
+    right: 11px;
+
+}
+
+.slider .handle.active {
+    cursor: pointer;
+}
+
+.slider .handle {
+    background: rgba(20, 20, 20, 0.26);
+    position: absolute;
+    top: 0;
+    height: 251px;
+    bottom: 0;
+    z-index: 20;
+    width: 7%;
+    text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+}
+
+.fa{
+  font-size: 46px;
+  margin-top: 120px;
+}
+
+.row {
+  overflow: hidden;
+}
+.row__inner {
+  -webkit-transition: 450ms -webkit-transform;
+  transition: 450ms -webkit-transform;
+  transition: 450ms transform;
+  transition: 450ms transform, 450ms -webkit-transform;
+  font-size: 0;
+  white-space: nowrap;
+  margin: 70.3125px 0;
+  padding-bottom: 10px;
+}
+
+
+.gui-card {
+  position: relative;
+  display: inline-block;
+  width: 250px;
+  height: 140.625px;
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: 450ms all;
+  transition: 450ms all;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+.gui-card__img {
+  width: 250px;
+  height: 140.625px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.gui-card__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  opacity: 0;
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  -webkit-transition: 450ms opacity;
+  transition: 450ms opacity;
+}
+.gui-card__details:after,
+.gui-card__details:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: #000;
+}
+.gui-card__details:after {
+  margin-top: -25px;
+  margin-left: -25px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #ecf0f1;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+.gui-card__details:before {
+  content: '▶';
+  left: 0;
+  width: 100%;
+  font-size: 30px;
+  margin-left: 7px;
+  margin-top: -13px;
+  text-align: center;
+  z-index: 2;
+}
+.gui-card:hover .gui-card__details {
+  opacity: 1;
+}
+.gui-card__title {
+  position: absolute;
+  bottom: 0;
+  padding: 3px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  background: #0000009e;
+  font-size: 15px;
+}
+.row__inner:hover {
+  -webkit-transform: translate3d(-62.5px, 0, 0);
+          transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .gui-card {
+  opacity: 0.3;
+}
+.row__inner:hover .gui-card:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 1;
+}
+.gui-card:hover ~ .gui-card {
+  -webkit-transform: translate3d(125px, 0, 0);
+          transform: translate3d(125px, 0, 0);
+}
+
+.titleAnimesTemporada{
+  padding-left: 4%;
+  margin-top: 4%;
+}
+
+.animesTemporada{
+  width: 100%;
+  text-align: left;
+  display: table;
+  margin-left: 0.5rem;
+}
+
+.animeT{
+  width: 13%;
+  display: inline-table;
+  position: relative;
+  height: 243px;
+  margin: 0 1% 0 0;
+  background-size: 100% 100% !important;
+}
+
+.animeT-Nome{
+  text-align: center;
+  font-size: 14px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 3px;
+  color: white;
+  background: #0000009e;
+}
+
+.subtitleAnimesT{
+  padding: 1% 0 1% 6%;
+  font-size: 20px;
+  margin-top: 2%;
+  background: #ffffff1a;
+  color: white;
 }

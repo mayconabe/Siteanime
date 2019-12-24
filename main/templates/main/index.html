@@ -15,14 +15,14 @@
   <header>
     <div class="center">
       <div class="header-left">
-        <a href="">YourAnimesOnline</a>
+        <a href="{% url 'index' %}" style="text-decoration: none; font-size: 20px;">YourAnimesOnline</a>
         <div class="menu-header">
           <ul>
             <li><a href="#">Início</a></li>
             <li><a href="#">Animes</a></li>
             <li><a href="#">Filmes</a></li>
-            <li><a href="#">Adicionados Recentemente</a></li>
-            <li><a href="#">Minha Lista</a></li>
+            <li><a href="#">Mais recentes</a></li>
+            <li><a href="#">Minha lista</a></li>
           </ul>
         </div>
       </div>
@@ -38,12 +38,12 @@
   </header>
 
   <section class="destaque">
-    <div class="video-responsive info">
+    <div class="overlayBottom"></div>
+    <div class="trailer">
         <!-- Trailer -->
-        <iframe width="1000px" src="https://www.youtube.com/embed/sVZpHFXcFJw?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="overflow:hidden;" src="https://www.youtube.com/embed/sVZpHFXcFJw?autoplay=1&controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
     </div>
     <div class="overlay"></div>
-    <div class="overlayBottom"></div>
     <div class="texto-destaque">
       <img src="https://occ-0-2563-1123.1.nflxso.net/dnm/api/v6/5e0byrbbfBPBmtxyXMpKqMuqOQY/AAAABVvhFuM_GDjoB5z2Pq79bsqSLokrTOO8heS4IuBMsMrMUlx5MIPPovdaf1Pj_RNeD56O5CdTB3_SEZ1ks-i89NYZE4KTz92WjlhTQh1NvivP-5WC7PCm13MKRkIMcWAAtm9WvwmpPW1SdozvMk9TvKG7DK4QwRZhwYBmH_aeh3YDZg.webp?r=ff1" alt="logo">
       <p>Era para ter sido um casamento de conveniência. Mas acabou que eles formam um casal e tanto. O amor está no ar.</p>
@@ -55,39 +55,366 @@
   </section>
 
   <section class="animeCarousel">
-    <div class="carousel">
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="js" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="java" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="python"/></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="kotlin" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="scala" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="C#" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="PHP" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="dotnet" /></div>
-    </div>
+    <div class="contain">
+    <div class="slider">
 
-    <div class="carousel">
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="js" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="java" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="python"/></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="kotlin" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="scala" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="C#" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="PHP" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="dotnet" /></div>
+      <span id="setaEsquerda" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimi no Na wa
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://dinastiageek.com.br/wp-content/uploads/2019/04/the-promised-neverland-poster-oficial.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yakusoku no Neverland
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://miro.medium.com/max/6000/1*UudNv6NojJQyxfqSwNUwag.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kaguya-sama: Love is War
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://cosmonerd.com.br/wp-content/uploads/2019/08/Kimetsu-no-Yaiba.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimetsu no Yaiba
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://2.bp.blogspot.com/-WiG3G1XHNOo/VCIokELyxBI/AAAAAAAALtE/vsCQEx3QAXA/s1600/57533-haikyuu-haik222yuu.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Haikyuu
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ibb.co/0CkF7dt/Jadwal-Tayang-Shingeki-no-Kyojin-Season-3-Cour-2-Dafunda-Otaku.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Shingeki no Kyokin
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/08/fullmetal-alchemist-brotherhood.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Fullmetal Brotherhood
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ytimg.com/vi/OwHGQ7ck4Yo/maxresdefault.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Hunter x Hunter
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://entreterse.com.br/wp-content/uploads/2019/09/A-Voz-do-Sil%C3%AAncio.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Koe no Katachi
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://switch-brasil.com/wp-content/uploads/2019/06/Prototype-Clannad_Keyart.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Clannad
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <span id="setaDireita" class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+
     </div>
+  </div>
+
+  <div class="contain">
+    <div class="slider">
+
+      <h3>Populares</h3>
+      <span id="setaEsquerda2" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller2" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimi no Na wa
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://dinastiageek.com.br/wp-content/uploads/2019/04/the-promised-neverland-poster-oficial.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yakusoku no Neverland
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://miro.medium.com/max/6000/1*UudNv6NojJQyxfqSwNUwag.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kaguya-sama: Love is War
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://cosmonerd.com.br/wp-content/uploads/2019/08/Kimetsu-no-Yaiba.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimetsu no Yaiba
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://2.bp.blogspot.com/-WiG3G1XHNOo/VCIokELyxBI/AAAAAAAALtE/vsCQEx3QAXA/s1600/57533-haikyuu-haik222yuu.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Haikyuu
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ibb.co/0CkF7dt/Jadwal-Tayang-Shingeki-no-Kyojin-Season-3-Cour-2-Dafunda-Otaku.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Shingeki no Kyokin
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/08/fullmetal-alchemist-brotherhood.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Fullmetal Brotherhood
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ytimg.com/vi/OwHGQ7ck4Yo/maxresdefault.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Hunter x Hunter
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://entreterse.com.br/wp-content/uploads/2019/09/A-Voz-do-Sil%C3%AAncio.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Koe no Katachi
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://switch-brasil.com/wp-content/uploads/2019/06/Prototype-Clannad_Keyart.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Clannad
+            </div>
+          </div>
 
 
-    <div class="carousel">
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="js" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="java" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="python"/></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="kotlin" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="scala" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="C#" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="PHP" /></div>
-      <div><img src="https://observatoriodegames.bol.uol.com.br/wp-content/uploads/2019/11/Giants-Riot-Games.jpg" alt="dotnet" /></div>
+        </div>
+      </div>
+
+      <span id="setaDireita2" class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+
     </div>
+  </div>
+
+  <div class="contain">
+    <div class="slider">
+
+      <h3>Populares</h3>
+      <span id="setaEsquerda3" class="handle handlePrev active">
+        <i class="fa fa-caret-left" aria-hidden="true"></i>
+      </span>
+
+      <div id="scroller3" class="row">
+        <div class="row__inner">
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimi no Na wa
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://dinastiageek.com.br/wp-content/uploads/2019/04/the-promised-neverland-poster-oficial.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yakusoku no Neverland
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://miro.medium.com/max/6000/1*UudNv6NojJQyxfqSwNUwag.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kaguya-sama: Love is War
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://cosmonerd.com.br/wp-content/uploads/2019/08/Kimetsu-no-Yaiba.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Kimetsu no Yaiba
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://2.bp.blogspot.com/-WiG3G1XHNOo/VCIokELyxBI/AAAAAAAALtE/vsCQEx3QAXA/s1600/57533-haikyuu-haik222yuu.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Haikyuu
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://kanto.legiaodosherois.com.br/w760-h398-gnw-cfill-q80/wp-content/uploads/2019/08/legiao_xhOWXFL2iDscw1_tRzvSqk9NufoE4eaMgBYImldZpT.png.jpeg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Yu-Gi-Oh!
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ibb.co/0CkF7dt/Jadwal-Tayang-Shingeki-no-Kyojin-Season-3-Cour-2-Dafunda-Otaku.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Shingeki no Kyokin
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://static3.cbrimages.com/wordpress/wp-content/uploads/2019/08/fullmetal-alchemist-brotherhood.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Fullmetal Brotherhood
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://i.ytimg.com/vi/OwHGQ7ck4Yo/maxresdefault.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Hunter x Hunter
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://entreterse.com.br/wp-content/uploads/2019/09/A-Voz-do-Sil%C3%AAncio.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Koe no Katachi
+            </div>
+          </div>
+
+          <div class="gui-card">
+            <div class="gui-card__media">
+              <img class="gui-card__img" src="https://switch-brasil.com/wp-content/uploads/2019/06/Prototype-Clannad_Keyart.jpg" alt=""  />
+            </div>
+            <div class="gui-card__title">
+              Clannad
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <span id="setaDireita3" class="handle handleNext active">
+        <i class="fa fa-caret-right" aria-hidden="true"></i>
+      </span>
+
+    </div>
+  </div>
+
   </section>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
