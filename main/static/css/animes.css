@@ -195,32 +195,31 @@ section.animeCarousel {
 }
 
 .container {
-  margin-top: 8%;
-  display: flex;
-  align-items: center;
-  padding: 50px;
-  height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    height: 60px;
+    flex-wrap: wrap;
+    align-content: space-between; 
 }
-
 .box {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
-  font-size: 40px;
-  z-index: 1;
-  transition: all 0.7s;
-  margin: 2px;
-  background-size: 100% 100% !important;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 40px;
+    color: white;
+    z-index: 1;
+    transition: all 0.6s;
+    margin: 2px;
+    background-size: 100% 100% !important;
 }
-
 .box:hover {
-  flex: 2;
-  height: 250px;
-  font-size: 90px;
-  margin-left: -2%;
-  margin-right: -2%;
-  z-index: 2;
-  cursor: pointer
+    flex: 2;
+    height: 190px;
+    font-size: 90px;
+    margin-left: -2%;
+    margin-right: -2%;
+    z-index: 2;
 }
