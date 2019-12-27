@@ -10,7 +10,7 @@ body {
 }
 
 .center {
-  max-width: 1480px;
+  max-width: 1780px;
   margin: 0 auto;
   padding: 0 2%;
 }
@@ -32,6 +32,10 @@ header {
   float: left;
 }
 
+.header-left a {
+    vertical-align: 30px;
+}
+
 .menu-header {
   position: relative;
   top: 10px;
@@ -41,13 +45,17 @@ header {
 
 .menu-header li {
   font-size: 14px;
-  margin-right: 15px;
+  margin-right: 10px;
   display: inline-block;
 }
 
-.menu-header a{
+.menu-header a {
   color: white;
   text-decoration: none;
+}
+
+.menu-header a:hover {
+    color: #dad5d5;
 }
 
 /* header right */
@@ -68,122 +76,6 @@ header {
   font-size: 18px;
   font-weight: bold;
 }
-
-/* Trailer ou video em destaque */
-
-
-
-section.destaque {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  z-index: 1;
-}
-
-.trailer {
-  position: absolute;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
-  width: 100%; 
-  margin: 0 auto;
-
-}
-
-.trailer iframe {
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 95%;
-}
-
-.overlay {
-  z-index: 3;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 26.09%;
-  bottom: 100%;
-  opacity: 1;
-  height: 100%;
-  width: 70%;
-  background: linear-gradient(77deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 85%);
-}
-
-.overlayBottom {
-  position: absolute;
-  height: 14.7vw;
-  top: auto;
-  bottom: -1px;
-  opacity: 0.87;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(20, 20, 20, 0) 0%, rgba(20, 20, 20, 0.15) 15%, rgba(20, 20, 20, 0.35) 29%, rgba(20, 20, 20, 0.58) 44%, #141414 68%, #141414 100%);
-}
-
-.texto-destaque {
-  color: white;
-  z-index: 4;
-  position: relative;
-  margin-top: 120px;
-  margin-left: 3%;
-}
-
-.texto-destaque p {
-  font-size: 1.4vw;
-  line-height: normal;
-  width: 670px;
-  height: auto;
-  margin: 0.5vw 0 0 0;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  z-index: 4;
-}
-
-.texto-destaque a {
-  background-color: rgba(20,20,20, 0.62);
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  padding: 8px 60px;
-  display: inline-block;
-  font-size: 23px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.texto-destaque a:hover {
-  background: white;
-  color: black;
-}
-
-.texto-destaque img {
-  min-height: 13.2vw;
-  margin-bottom: 1.2vw;
-  width: 33.4020%;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-}
-
-/* Carousel */
-
-section.animeCarousel {
-  padding-top: 3%;
-  z-index: 2000;
-  position: relative;
-}
-
-.carousel {
-  z-index: 5;
-  width: 95%;
-  margin: 0 auto;
-  padding-bottom: 2%;
-}
-
-.carousel img {
-  width: 350px;
-  height: 170px;
-}
-
 
 /* flexbox */
 
@@ -207,19 +99,15 @@ section.animeCarousel {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    font-size: 40px;
+    height: 180px;
     color: white;
     z-index: 1;
-    transition: all 0.6s;
+    transition: all 0.7s;
     margin: 2px;
     background-size: 100% 100% !important;
 }
 .box:hover {
     flex: 2;
-    height: 190px;
-    font-size: 90px;
-    margin-left: -2%;
-    margin-right: -2%;
+    height: 240px;
     z-index: 2;
 }

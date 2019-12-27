@@ -9,14 +9,35 @@
 </head>
 
 <body>
+  <header>
+    <div class="center">
+      <div class="header-left">
+        <a href="{% url 'index' %}" style="text-decoration: none; font-size: 20px;">YourAnimesOnline</a>
+        <div class="menu-header">
+          <ul>
+            <li><a href="{% url 'index' %}">Início</a></li>
+            <li><a href="{% url 'animes' %}">Animes</a></li>
+            <li><a href="#">Filmes</a></li>
+            <li><a href="#">Mais recentes</a></li>
+            <li><a href="#">Minha lista</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <div class="search">
+          <i class="fas fa-search"></i>
+        </div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </header>
+  
     <div class="text">
         <h1>Animes</h1>
     </div>
     <div class="container">
-        <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
-        <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
-        <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
-        <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
         <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
         <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
         <div class="box" style="background: url('https://sm.ign.com/ign_br/screenshot/default/kimi-no-na-wa-your-name-cinema-brasileiro_h54c.jpg')"></div>
